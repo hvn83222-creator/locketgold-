@@ -3,101 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locket Gold Hoàng Nghĩa</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Locket Gold Pro - Hoàng Nghĩa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #7028e4; --bg: #fdfbff; }
-        body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg); display: flex; justify-content: center; }
-        .app { width: 100%; max-width: 480px; background: #fff; min-height: 100vh; position: relative; padding-bottom: 80px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        header { padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
-        .logo { color: #d63384; font-weight: bold; font-size: 18px; }
-        .page { display: none; padding: 20px; animation: fadeIn 0.3s; }
-        .active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .banner-img { width: 100%; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
-        .stat-item { background: #f8f9fa; padding: 15px 5px; border-radius: 12px; text-align: center; }
-        .stat-item b { display: block; color: var(--primary); font-size: 16px; }
-        .stat-item span { font-size: 10px; color: #999; }
-        .btn { width: 100%; padding: 15px; background: var(--primary); color: #fff; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 16px; }
-        .nav { position: fixed; bottom: 0; width: 100%; max-width: 480px; background: #fff; display: flex; padding: 10px 0 25px; border-top: 1px solid #eee; }
-        .nav-item { flex: 1; text-align: center; color: #bbb; font-size: 11px; cursor: pointer; }
-        .nav-item i { font-size: 20px; display: block; margin-bottom: 4px; }
-        .nav-item.active { color: var(--primary); }
-        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        :root { --primary: #F2C94C; --pink-heart: #FF69B4; --snow: #A5A5A5; --bg: #FFFFFF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #1D1D1F; overflow: hidden; }
+        #overlay { position: fixed; inset: 0; background: #fff; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; transition: 1s; }
+        .author-img { width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--primary); margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .start-btn { background: #000; color: #fff; padding: 20px 60px; border-radius: 50px; font-weight: 800; border: none; cursor: pointer; text-transform: uppercase; }
+        .particle { position: fixed; top: -20px; user-select: none; pointer-events: none; z-index: 5; animation: fall linear infinite; }
+        @keyframes fall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(105vh) rotate(360deg); opacity: 0; } }
+        .container { max-width: 480px; margin: 0 auto; padding: 20px; opacity: 0; transition: 1.5s; height: 100vh; overflow-y: auto; scrollbar-width: none; }
+        .card { background: #F8F8F9; border-radius: 30px; padding: 25px; margin-bottom: 20px; border: 1px solid #E5E5E7; }
+        header { text-align: center; padding: 20px 0; font-size: 28px; font-weight: 800; }
+        header span { color: var(--primary); text-shadow: 1px 1px 0 #000; }
+        .btn { display: block; width: 100%; border-radius: 18px; padding: 20px; font-weight: 700; text-align: center; text-decoration: none; margin-top: 10px; }
+        .btn-copy { background: #000; color: #fff; }
+        .btn-zalo { background: #0068FF; color: white; }
     </style>
 </head>
 <body>
-<div class="app">
-    <header><span class="logo">Locket Gold Hoàng Nghĩa</span><i class="fa fa-bars"></i></header>
-
-    <div id="p_guest" class="page active" style="text-align:center; padding-top:50px;">
-        <i class="fa fa-user-circle" style="font-size:60px; color:#eee;"></i>
-        <h2>Chào mừng bạn!</h2>
-        <p>Đăng nhập để xem các tính năng VIP</p>
-        <button class="btn" onclick="show('p_login')">Đăng nhập</button>
+    <div id="overlay">
+        <img src="https://cdn.phototourl.com/free/2026-05-11-b65526e7-8cec-4342-ab5d-598394ed3411.jpg" class="author-img">
+        <h1 style="margin-bottom: 10px;">HOÀNG NGHĨA</h1>
+        <p style="color: #666; margin-bottom: 30px;">Nhấn nút để trải nghiệm nhạc & hiệu ứng</p>
+        <button class="start-btn" onclick="start()">KHÁM PHÁ NGAY</button>
     </div>
-
-    <div id="p_home" class="page">
-        <img src="https://i.imgur.com/GzBIsG7.png" class="banner-img" alt="Locket Gold VIP">
-        <div class="stats">
-            <div class="stat-item"><b>11,166</b><span>THÀNH VIÊN</span></div>
-            <div class="stat-item"><b>1,035</b><span>LƯỢT DÙNG</span></div>
-            <div class="stat-item"><b>920</b><span>TÀI KHOẢN VIP</span></div>
+    <audio id="bgMusic" loop><source src="Audios_20260326_1216.m4r" type="audio/mp4"></audio>
+    <div id="particle-container"></div>
+    <div class="container" id="main-content">
+        <header>LOCKET <span>GOLD</span> PRO</header>
+        <div class="card">
+            <h2 style="margin-bottom: 10px; font-size: 18px;">Hướng dẫn Shadowrocket</h2>
+            <p style="color: #444; font-size: 14px;">Cách cài đặt Locket Gold mới nhất 2026.</p>
         </div>
-        <button class="btn" onclick="show('p_price')">Nâng cấp VIP ngay</button>
-    </div>
-
-    <div id="p_login" class="page">
-        <div style="border:1px solid #ddd; padding:20px; border-radius:15px;">
-            <h3>Đăng nhập</h3>
-            <input type="text" placeholder="Tên đăng nhập">
-            <input type="password" placeholder="Mật khẩu">
-            <button class="btn" onclick="doLogin()">Vào hệ thống</button>
+        <div class="card">
+            <button class="btn btn-copy" onclick="copy()">SAO CHÉP LINK MODULE</button>
+            <a href="https://zalo.me/0339283222" target="_blank" class="btn btn-zalo">LIÊN HỆ HOÀNG NGHĨA</a>
         </div>
     </div>
-
-    <div id="p_price" class="page" style="text-align:center;">
-        <div style="border:2px solid var(--primary); padding:20px; border-radius:15px;">
-            <h2 style="color:var(--primary);">VIP TRỌN ĐỜI</h2>
-            <h1 style="color:#d63384;">20.000đ</h1>
-            <button class="btn" onclick="show('p_pay')">Thanh toán</button>
-        </div>
-    </div>
-
-    <div id="p_pay" class="page" style="text-align:center;">
-        <h3>Quét mã để nạp</h3>
-        <img src="https://img.vietqr.io/image/MB-066998-compact.jpg?amount=20000&addInfo=NapVip&accountName=HOANG%20VAN%20NGHIA" style="width:100%; max-width:250px; border-radius:10px;">
-        <p><b>MB BANK: 066998</b></p>
-        <button class="btn" onclick="window.location.href='https://zalo.me/0339283222'">Gửi bill Zalo</button>
-    </div>
-
-    <nav class="nav">
-        <div id="n_home" class="nav-item active" onclick="goHome()"><i class="fa fa-house"></i>Trang chủ</div>
-        <div class="nav-item" onclick="show('p_pay')"><i class="fa fa-bolt"></i>Kích hoạt</div>
-        <div class="nav-item" onclick="show('p_price')"><i class="fa fa-tag"></i>Bảng giá</div>
-        <div class="nav-item" onclick="show('p_login')"><i class="fa fa-user"></i>Tài khoản</div>
-    </nav>
-</div>
-
-<script>
-    let isLogged = false;
-    function show(id) {
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    }
-    function doLogin() {
-        isLogged = true;
-        alert("Đăng nhập thành công!");
-        show('p_home');
-        document.getElementById('n_home').classList.add('active');
-    }
-    function goHome() {
-        if(isLogged) show('p_home');
-        else show('p_guest');
-        document.getElementById('n_home').classList.add('active');
-    }
-</script>
+    <script>
+        function start() {
+            document.getElementById('bgMusic').play().catch(e => {});
+            document.getElementById('overlay').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('main-content').style.opacity = '1';
+                setInterval(() => {
+                    const c = document.getElementById('particle-container');
+                    const p = document.createElement('div');
+                    const isH = Math.random() > 0.6;
+                    p.className = 'particle'; p.innerHTML = isH ? '❤️' : '❄️';
+                    p.style.color = isH ? '#FF69B4' : '#A5A5A5';
+                    p.style.left = Math.random() * 100 + 'vw';
+                    p.style.fontSize = (Math.random() * 15 + 10) + 'px';
+                    p.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    c.appendChild(p); setTimeout(() => p.remove(), 5000);
+                }, 200);
+            }, 1000);
+        }
+        function copy() { navigator.clipboard.writeText("https://raw.githubusercontent.com/vuong2023/shad/main/modules/Locket_ohb.sgmodule"); alert("Đã copy!"); }
+    </script>
 </body>
 </html>
